@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "318507887937",
+    "project_id": "rollio-mobile-sprint2",
+    "storage_bucket": "rollio-mobile-sprint2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318507887937:android:16a0eb9c62ebd3105b05c0",
+        "android_client_info": {
+          "package_name": "com.example.rollio_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAX5JO8GQebsRab8bmTBR-iY2GKDDt1j18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

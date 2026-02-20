@@ -1,0 +1,16 @@
+# Repository settings managed via Probot Settings App
+# https://github.com/repository-settings/app
+
+branches:
+  - name: main
+    protection:
+      # Require at least 1 approving review before merging a PR
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: false
+        require_code_owner_reviews: false
+      required_status_checks:
+        strict: false
+        contexts: []
+      enforce_admins: true
+      restrictions: null

@@ -53,7 +53,7 @@ class ResponsiveHome extends StatelessWidget {
                     style: TextStyle(
                       fontSize: isTablet ? 18 : 14,
                     ),
-                  ),
+                  ),  
                 ),
               )
             ],

@@ -178,6 +178,19 @@ Real-time Stream Response
 UI Rebuild
 ```
 
+## Widget Tree Demo
+
+MaterialApp
+ ┗ WidgetTreeDemo
+    ┗ Scaffold
+       ┣ AppBar
+       ┗ Body
+          ┗ Center
+             ┗ Column
+                ┣ Text
+                ┗ ElevatedButton
+
+
 ---
 
 ## 🚢 Deployment Strategy

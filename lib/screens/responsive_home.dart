@@ -61,7 +61,9 @@ class ResponsiveHome extends StatelessWidget {
         },
       ),
     );
-  }
+  }    
+
+
 
   Widget _buildPhoneLayout(bool isLandscape) {
     if (isLandscape) {

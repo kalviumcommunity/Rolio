@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
+/// Demonstrates a simple widget tree with a counter
 class WidgetTreeDemo extends StatefulWidget {
-  const WidgetTreeDemo({Key? key}) : super(key: key);
+  const WidgetTreeDemo({super.key});
 
   @override
-  _WidgetTreeDemoState createState() => _WidgetTreeDemoState();
+  State<WidgetTreeDemo> createState() => _WidgetTreeDemoState();
 }
 
 class _WidgetTreeDemoState extends State<WidgetTreeDemo> {
   int count = 0;
 
+  /// Increments the counter value
   void increment() {
     setState(() {
       count++;
@@ -19,16 +21,21 @@ class _WidgetTreeDemoState extends State<WidgetTreeDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Widget Tree Demo")),
+      appBar: AppBar(
+        title: const Text("Widget Tree Demo"),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Count: $count", style: TextStyle(fontSize: 22)),
-            SizedBox(height: 20),
+            Text(
+              "Count: $count",
+              style: const TextStyle(fontSize: 22),
+            ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: increment,
-              child: Text("Increment"),
+              child: const Text("Increment"),
             ),
           ],
         ),

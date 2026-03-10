@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 class ResponsiveHome extends StatelessWidget {
   const ResponsiveHome({super.key});
 
+  static const double tabletBreakpoint = 600;
+
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    final mediaQuery = MediaQuery.of(context);
+    final double screenWidth = mediaQuery.size.width;
+    final double screenHeight = mediaQuery.size.height;
 
-    bool isTablet = screenWidth > 600;
-    bool isLandscape = screenWidth > screenHeight;
+    final bool isTablet = screenWidth > tabletBreakpoint;
+    final bool isLandscape = screenWidth > screenHeight;
 
     return Scaffold(
       appBar: AppBar(
@@ -20,20 +23,7 @@ class ResponsiveHome extends StatelessWidget {
         builder: (context, constraints) {
           return Column(
             children: [
-              // HEADER SECTION
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(isTablet ? 24 : 16),
-                color: Colors.blue.shade100,
-                child: Text(
-                  "Welcome to Responsive UI",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: isTablet ? 28 : 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              _buildHeader(isTablet),
 
               // MAIN CONTENT
               Expanded(
@@ -42,28 +32,47 @@ class ResponsiveHome extends StatelessWidget {
                     : _buildPhoneLayout(isLandscape),
               ),
 
-              // FOOTER SECTION
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(isTablet ? 20 : 12),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Continue",
-                    style: TextStyle(
-                      fontSize: isTablet ? 18 : 14,
-                    ),
-                  ),  
-                ),
-              )
+              _buildFooter(isTablet)
             ],
           );
         },
       ),
     );
-  }    
+  }
 
+  /// HEADER SECTION
+  Widget _buildHeader(bool isTablet) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(isTablet ? 24 : 16),
+      color: Colors.blue.shade100,
+      child: Text(
+        "Welcome to Responsive UI",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: isTablet ? 28 : 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
 
+  /// FOOTER SECTION
+  Widget _buildFooter(bool isTablet) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(isTablet ? 20 : 12),
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Text(
+          "Continue",
+          style: TextStyle(
+            fontSize: isTablet ? 18 : 14,
+          ),
+        ),
+      ),
+    );
+  }
 
   Widget _buildPhoneLayout(bool isLandscape) {
     if (isLandscape) {
@@ -103,7 +112,7 @@ class ResponsiveHome extends StatelessWidget {
       child: Center(
         child: FittedBox(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16),
             child: Text(
               title,
               style: const TextStyle(fontSize: 18),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Demonstrates the difference between Stateless and Stateful widgets
 class StatelessStatefulDemo extends StatelessWidget {
   const StatelessStatefulDemo({super.key});
 
@@ -23,6 +24,7 @@ class StatelessStatefulDemo extends StatelessWidget {
   }
 }
 
+/// Stateless widget used to display the title/header
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});
 
@@ -38,6 +40,7 @@ class HeaderWidget extends StatelessWidget {
   }
 }
 
+/// Stateful widget responsible for handling counter updates
 class CounterWidget extends StatefulWidget {
   const CounterWidget({super.key});
 
@@ -48,6 +51,7 @@ class CounterWidget extends StatefulWidget {
 class _CounterWidgetState extends State<CounterWidget> {
   int counter = 0;
 
+  /// Increments the counter value
   void incrementCounter() {
     setState(() {
       counter++;
@@ -66,7 +70,7 @@ class _CounterWidgetState extends State<CounterWidget> {
         ElevatedButton(
           onPressed: incrementCounter,
           child: const Text("Increase Counter"),
-        )
+        ),
       ],
     );
   }
